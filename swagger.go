@@ -300,7 +300,7 @@ window.onload = function() {
   if (defaultClientId) {
     ui.initOAuth({
       clientId: defaultClientId,
-      usePkceWithAuthorizationCodeGrant: {{.Oauth2UsePkce}}
+      usePkceWithAuthorizationCodeGrant: {{.Oauth2UsePkce}},
       useBasicAuthenticationWithAccessCodeGrant: {{.Oauth2UseBasicAuthenticationWithAccessCodeGrant}}
     })
   }else {
