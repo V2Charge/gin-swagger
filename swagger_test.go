@@ -267,3 +267,16 @@ func TestOauth2UsePkce(t *testing.T) {
 	configFunc(&cfg)
 	assert.Equal(t, false, cfg.Oauth2UsePkce)
 }
+
+func TestOauth2UseBasicAuthenticationWithAccessCodeGrant(t *testing.T) {
+	var cfg Config
+	assert.Equal(t, false, cfg.Oauth2UseBasicAuthenticationWithAccessCodeGrant)
+
+	configFunc := Oauth2UseBasicAuthenticationWithAccessCodeGrant(true)
+	configFunc(&cfg)
+	assert.Equal(t, true, cfg.Oauth2UseBasicAuthenticationWithAccessCodeGrant)
+
+	configFunc = Oauth2UseBasicAuthenticationWithAccessCodeGrant(false)
+	configFunc(&cfg)
+	assert.Equal(t, false, cfg.Oauth2UseBasicAuthenticationWithAccessCodeGrant)
+}
